@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Literasi Digital: Pencegahan Judi Online & Keadaban Digital</title>
+<style>
+  :root{
+    --navy:#12233f;
+    --navy-light:#1c3a63;
+    --gold:#c99a3f;
+    --paper:#faf7f0;
+    --ink:#1f2430;
+    --muted:#5b6472;
+    --card:#ffffff;
+    --line:#e4ddcb;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:"Segoe UI", "Trebuchet MS", Tahoma, sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.6;
+  }
+  header{
+    background:linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    color:#fff;
+    padding:48px 24px 40px;
+    text-align:center;
+  }
+  header .eyebrow{
+    text-transform:uppercase;
+    letter-spacing:.18em;
+    font-size:.75rem;
+    color:var(--gold);
+    font-weight:700;
+    margin-bottom:10px;
+  }
+  header h1{
+    margin:0 0 12px;
+    font-size:clamp(1.6rem, 4vw, 2.4rem);
+  }
+  header p{
+    max-width:680px;
+    margin:0 auto;
+    color:#d8dfec;
+    font-size:1rem;
+  }
+  .wrap{
+    max-width:920px;
+    margin:0 auto;
+    padding:32px 20px 64px;
+  }
+  .table-card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:22px 24px;
+    margin:-28px auto 36px;
+    max-width:880px;
+    box-shadow:0 10px 28px rgba(18,35,63,.10);
+  }
+  table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:.95rem;
+  }
+  th, td{
+    text-align:left;
+    padding:10px 12px;
+    border-bottom:1px solid var(--line);
+  }
+  th{
+    background:var(--navy);
+    color:#fff;
+    font-size:.85rem;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+  }
+  tr:last-child td{
+    font-weight:700;
+    border-bottom:none;
+    background:#f4efe1;
+  }
+  .section{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:28px 28px 26px;
+    margin-bottom:28px;
+    box-shadow:0 6px 18px rgba(18,35,63,.06);
+  }
+  .section-head{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-bottom:8px;
+  }
+  .badge{
+    flex:0 0 auto;
+    width:38px;height:38px;
+    border-radius:50%;
+    background:var(--gold);
+    color:var(--navy);
+    font-weight:800;
+    display:flex;align-items:center;justify-content:center;
+    font-size:1.05rem;
+  }
+  .section h2{
+    margin:0;
+    font-size:1.25rem;
+    color:var(--navy);
+  }
+  .duration{
+    display:inline-block;
+    margin-top:4px;
+    font-size:.82rem;
+    color:var(--muted);
+    background:#f2ede0;
+    padding:3px 10px;
+    border-radius:20px;
+  }
+  h3.sub{
+    font-size:.95rem;
+    text-transform:uppercase;
+    letter-spacing:.05em;
+    color:var(--navy);
+    margin:22px 0 10px;
+    border-left:4px solid var(--gold);
+    padding-left:10px;
+  }
+  ul, ol{
+    margin:0 0 0 4px;
+    padding-left:20px;
+  }
+  li{margin-bottom:6px;}
+  .callout{
+    background:#f6f1e2;
+    border:1px solid var(--line);
+    border-left:4px solid var(--gold);
+    border-radius:8px;
+    padding:14px 16px;
+    font-style:italic;
+    color:var(--ink);
+    margin:12px 0;
+  }
+  .video-wrap{
+    position:relative;
+    padding-bottom:56.25%;
+    height:0;
+    overflow:hidden;
+    border-radius:12px;
+    margin:16px 0 6px;
+    box-shadow:0 8px 24px rgba(18,35,63,.18);
+  }
+  .video-wrap iframe{
+    position:absolute;
+    top:0;left:0;width:100%;height:100%;
+    border:0;
+  }
+  .video-caption{
+    font-size:.85rem;
+    color:var(--muted);
+    text-align:center;
+    margin-top:6px;
+  }
+  .qa{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:14px 16px;
+    margin-bottom:10px;
+  }
+  .qa strong{color:var(--navy);}
+  .hint{
+    display:block;
+    margin-top:4px;
+    font-size:.88rem;
+    color:var(--muted);
+  }
+  .tools{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:6px;
+  }
+  .tools span{
+    background:#eef1f6;
+    color:var(--navy);
+    padding:5px 12px;
+    border-radius:20px;
+    font-size:.82rem;
+  }
+  .campaign-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+    gap:14px;
+    margin-top:14px;
+  }
+  .campaign-grid .card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:16px;
+  }
+  .campaign-grid .card h4{
+    margin:0 0 6px;
+    color:var(--navy);
+    font-size:1rem;
+  }
+  footer{
+    text-align:center;
+    padding:24px;
+    color:var(--muted);
+    font-size:.85rem;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">Kegiatan 3 &middot; Modul Literasi Digital</div>
+  <h1>Keadaban &amp; Keamanan Digital serta Kecerdasan Finansial Era Digital</h1>
+  <p>Mengenalkan murid pada bahaya judi online dan pentingnya keadaban digital melalui film, diskusi, dan kampanye 3S.</p>
+</header>
+
+<div class="wrap">
+
+  <div class="table-card">
+    <table>
+      <thead>
+        <tr><th>No.</th><th>Uraian Kegiatan / Materi</th><th>Durasi</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Nonton Bersama Film Pencegahan Judi Online</td><td>25 menit</td></tr>
+        <tr><td>2</td><td>Diskusi dan Refleksi Film Pencegahan Judi Online</td><td>5 menit</td></tr>
+        <tr><td>3</td><td>Kampanye 3S: Screen Time, Screen Zone, Screen Break</td><td>30 menit</td></tr>
+        <tr><td colspan="2">Total Durasi</td><td>60 menit</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Kegiatan 1 -->
+  <section class="section">
+    <div class="section-head">
+      <div class="badge">1</div>
+      <div>
+        <h2>Nonton Bersama Film Pencegahan Judi Online</h2>
+        <span class="duration">Durasi: 25 menit</span>
+      </div>
+    </div>
+
+    <h3 class="sub">Tujuan Kegiatan</h3>
+    <ol>
+      <li>Murid dapat mengidentifikasi ciri-ciri dan modus judi online.</li>
+      <li>Murid memahami dampak negatif judi online pada keuangan, keluarga, pertemanan, mental, dan masa depan.</li>
+      <li>Murid mengetahui cara menghindari praktik judi online.</li>
+    </ol>
+
+    <h3 class="sub">Alat dan Bahan</h3>
+    <div class="tools">
+      <span>Laptop (jika ada)</span>
+      <span>Proyektor (jika ada)</span>
+      <span>Pengeras suara (jika ada)</span>
+      <span>Film pendek "Kemenangan Sejati"</span>
+    </div>
+
+    <h3 class="sub">Video: Kemenangan Sejati</h3>
+    <div class="video-wrap">
+      <iframe src="https://www.youtube.com/embed/xJD37cmYPws" title="Kemenangan Sejati - Film Pencegahan Judi Online" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <p class="video-caption">Tautan asli: <a href="https://s.id/antijudol" target="_blank" rel="noopener">s.id/antijudol</a></p>
+
+    <h3 class="sub">Alur Kegiatan</h3>
+    <ol>
+      <li>
+        Guru memberikan pengantar untuk membuka sesi.
+        <div class="callout">"Di era digital ini, banyak sekali tawaran yang terlihat menggiurkan di internet, seperti janji uang instan atau pinjaman mudah tanpa syarat. Namun, kita perlu sangat berhati-hati, karena hal tersebut merupakan jebakan berbahaya."</div>
+      </li>
+      <li>
+        Guru memberikan pertanyaan pemantik kepada murid, misalnya:
+        <div class="callout">"Siapa yang pernah dengar kata judi online? Menurut kalian, apa sih itu? Mengapa orang tertarik sama judi online?"</div>
+        <div class="callout">"Apakah kamu pernah mendengar atau membaca berita mengenai individu yang terjerat judi online? Menurut pandangan kamu, apa saja potensi bahaya dari hal tersebut?"</div>
+        Guru memberikan kesempatan kepada beberapa murid untuk menjawab pertanyaan.
+      </li>
+      <li>Guru memberikan penguatan mengenai bahaya judi online melalui kegiatan menonton film pendek pencegahan judi online berjudul <em>Kemenangan Sejati</em>.</li>
+      <li>Murid menyaksikan film dari awal hingga akhir.</li>
+    </ol>
+  </section>
+
+  <!-- Kegiatan 2 -->
+  <section class="section">
+    <div class="section-head">
+      <div class="badge">2</div>
+      <div>
+        <h2>Diskusi dan Refleksi Film Pencegahan Judi Online</h2>
+        <span class="duration">Durasi: 5 menit</span>
+      </div>
+    </div>
+
+    <h3 class="sub">Tujuan Kegiatan</h3>
+    <ol>
+      <li>Memfasilitasi refleksi mendalam murid setelah menonton film.</li>
+      <li>Mengidentifikasi faktor pemicu dan dampak negatif judi online secara komprehensif.</li>
+      <li>Mendorong murid untuk mengetahui cara menghindari judi online dan berani mencari bantuan.</li>
+    </ol>
+
+    <h3 class="sub">Alat dan Bahan</h3>
+    <div class="tools">
+      <span>Kertas</span>
+      <span>Alat tulis</span>
+    </div>
+
+    <h3 class="sub">Alur Kegiatan</h3>
+    <p>Setelah menyaksikan film, murid diajak berdiskusi secara terbuka dengan beberapa pertanyaan, misalnya:</p>
+
+    <div class="qa"><strong>a.</strong> Apa pelajaran paling berharga yang kamu peroleh dari film Kemenangan Sejati?</div>
+    <div class="qa"><strong>b.</strong> Mengapa tokoh utama dalam film dapat terjerumus ke dalam judi online?</div>
+    <div class="qa">
+      <strong>c.</strong> Faktor-faktor apa saja yang mungkin memengaruhinya?
+      <span class="hint">Arahkan jawaban, misalnya: keinginan mendapatkan uang instan, tekanan teman sebaya, kurangnya pengetahuan, rasa ingin mencoba, atau masalah ekonomi pribadi.</span>
+    </div>
+    <div class="qa">
+      <strong>d.</strong> Apa saja dampak negatif yang terlihat dalam film akibat judi online dan pinjaman online ilegal?
+      <span class="hint">Arahkan jawaban, misalnya: kerugian finansial, masalah psikologis, kerusakan hubungan dengan keluarga, stres, ketakutan, atau terhambatnya masa depan.</span>
+    </div>
+    <div class="qa"><strong>e.</strong> Apabila kamu atau teman kamu berada dalam situasi serupa dengan tokoh di film, tindakan apa yang akan kamu lakukan?</div>
+    <div class="qa">
+      <strong>f.</strong> Siapa yang harus kamu mintai bantuan atau nasihat?
+      <span class="hint">Arahkan jawaban ke: orang tua/wali, guru, wali kelas, konselor sekolah, atau pihak berwenang.</span>
+    </div>
+
+    <p>Guru memberikan respon terhadap jawaban murid dan menyampaikan pesan kunci.</p>
+  </section>
+
+  <!-- Kegiatan 3 -->
+  <section class="section">
+    <div class="section-head">
+      <div class="badge">3</div>
+      <div>
+        <h2>Kampanye 3S: Screen Time, Screen Zone, Screen Break</h2>
+        <span class="duration">Durasi: 30 menit</span>
+      </div>
+    </div>
+    <p>Kegiatan lanjutan untuk membangun kebiasaan digital yang sehat dan berimbang bagi murid.</p>
+    <div class="campaign-grid">
+      <div class="card">
+        <h4>⏱️ Screen Time</h4>
+        <p>Mengatur durasi penggunaan layar/gawai secara sadar dan tidak berlebihan.</p>
+      </div>
+      <div class="card">
+        <h4>📍 Screen Zone</h4>
+        <p>Menentukan area/waktu bebas layar, misalnya saat makan bersama keluarga atau menjelang tidur.</p>
+      </div>
+      <div class="card">
+        <h4>🌿 Screen Break</h4>
+        <p>Membiasakan jeda dari layar untuk beristirahat, bergerak, dan berinteraksi langsung dengan sekitar.</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  Modul Literasi Digital &middot; Pencegahan Judi Online &amp; Keadaban Digital
+</footer>
+
+</body>
+</html>
